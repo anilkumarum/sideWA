@@ -9,7 +9,7 @@
 	"author": "WebRail",
 	"icons": {
 		"128": "icon-128.png",
-		"16": "icon-16.png"
+		"24": "icon-24.png"
 	},
 
 	"action": {
