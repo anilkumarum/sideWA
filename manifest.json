@@ -1,0 +1,60 @@
+{
+	"manifest_version": 3,
+	"minimum_chrome_version": "112",
+	"offline_enabled": true,
+	"name": "sideWA - WhatsApp in side panel",
+	"short_name": "sideWA",
+	"description": "Open WhatsApp in side panel. Open source",
+	"version": "0.0.1",
+	"author": "WebRail",
+	"icons": {
+		"128": "icon-128.png",
+		"16": "icon-16.png"
+	},
+
+	"action": {
+		"default_title": "Open WhatsApp"
+	},
+
+	"side_panel": {
+		"default_path": "panel/index.html"
+	},
+
+	"background": {
+		"service_worker": "background/background.js",
+		"type": "module"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://web.whatsapp.com/*"],
+			"js": ["panel/layout.js"],
+			"run_at": "document_idle",
+			"all_frames": true
+		}
+	],
+
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Alt+W",
+				"windows": "Alt+W",
+				"mac": "Alt+W",
+				"linux": "Alt+W"
+			}
+		}
+	},
+
+	"declarative_net_request": {
+		"rule_resources": [
+			{
+				"id": "wa_frame_rule",
+				"enabled": true,
+				"path": "net_request.json"
+			}
+		]
+	},
+
+	"permissions": ["declarativeNetRequestWithHostAccess", "sidePanel"],
+	"host_permissions": ["https://web.whatsapp.com/*"]
+}

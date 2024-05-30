@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"priority": 1,
+		"action": {
+			"type": "modifyHeaders",
+			"requestHeaders": [
+				{ "operation": "set", "header": "Sec-Fetch-Dest", "value": "document" },
+				{ "operation": "set", "header": "Sec-Fetch-Site", "value": "none" },
+				{ "operation": "set", "header": "Host", "value": "web.whatsapp.com" }
+			],
+			"responseHeaders": [{ "operation": "remove", "header": "Content-Security-Policy" }]
+		},
+
+		"condition": {
+			"urlFilter": "https://web.whatsapp.com/*",
+			"resourceTypes": ["sub_frame"]
+		}
+	}
+]

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sideWA - WhatsApp in side panel</title>
+</head>
+
+<body>
+    <iframe src="https://web.whatsapp.com/" frameborder="0"></iframe>
+    <style>
+        html {
+            scrollbar-width: thin;
+        }
+
+        body {
+            margin: 0;
+            background-color: black;
+            scrollbar-width: thin;
+        }
+
+        iframe {
+            width: 100vw;
+            height: 99.8vh;
+            overflow: hidden;
+
+            &:empty::before {
+                content: "Loading...";
+                position: absolute;
+                inset: 0;
+                z-index: 100;
+            }
+        }
+    </style>
+</body>
+
+</html>

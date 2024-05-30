@@ -1,0 +1,12 @@
+build
+crx-hmr.js
+sideWA.zip
+.vscode
+.TODO
+build.sh
+jsconfig.json
+_metadata
+
+# zip -r sideWA.zip  .
+
+
